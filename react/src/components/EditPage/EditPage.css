@@ -1,0 +1,19 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.dropzone {
+    width: 200px;
+    height: 100px;
+    border: 2px dashed gray;
+    text-align: center;
+    line-height: 80px;
+}
+
+.editpage {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
