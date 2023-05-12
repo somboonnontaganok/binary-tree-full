@@ -13,33 +13,30 @@ const Editactivity = () => {
             <div class="row g-3">
 
               <div class="col-12">
-                <label for="email" class="form-label">Description</label>
+                <label for="description" class="form-label">Description</label>
                 <input className="form-control w-75 p-5" />
-                <div class="invalid-feedback">
-                  Please enter a valid email address for shipping updates.
-                </div>
               </div>
 
               <div class="col-12">
-                <label for="address" class="form-label">Duration</label>
-                <input type="text" class="form-control" id="address"  required=""/>
+                <label for="duration" class="form-label">Duration</label>
+                <input type="text" class="form-control" id="duration"  required=""/>
             
               </div>
 
               <div class="col-12">
-                <label for="address" class="form-label">Duration</label>
-                <input type="text" class="form-control" id="address"  required=""/>
+                <label for="duration" class="form-label">Duration</label>
+                <input type="text" class="form-control" id="duration"  required=""/>
             
               </div>
               <div class="col-12">
-                <label for="address2" class="form-label">Heart Rate</label>
-                <input type="text" class="form-control" id="address2" />
+                <label for="heartrate" class="form-label">Heart Rate</label>
+                <input type="text" class="form-control" id="heartrate" />
               </div>
 
               <div class="col-md-5">
                 
-              <label for="address2" class="form-label">Remark</label>
-              <input type="text" class="form-control" id="address2" />
+              <label for="remark" class="form-label">Remark</label>
+              <input type="text" class="form-control" id="remark" />
                <p></p>
               </div>              
             </div>
@@ -55,8 +52,10 @@ const Editactivity = () => {
             <h5>Input your Image</h5>
             <input className="pb-3" type="file" id="input-img" />
           </div>  
-            <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="title" placeholder="" value="" required=""/>
+          <div class="col-12">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" />
+              </div>
         </form>
         <div className="form-group col-sm-4">
                 <label className="control-label mb-3">Workout Types</label>
