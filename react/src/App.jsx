@@ -2,12 +2,13 @@ import React from 'react'
 import Layout from '../src/components/Layout';
 import girl from '../public/assets/img/girlEllipse.png';
 import headPhone from '../public/assets/img/headPhone.png';
+import  Editactivity  from '../src/components/Editactivity';
 
 const App = () => {
 
   return (
     <>
-      <Layout />
+      {/* <Layout />
           <div className="container">
             <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
               <div className="col-10 col-sm-8 col-lg-6">
@@ -22,7 +23,8 @@ const App = () => {
                   <img src={girl} className="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy" />     
                 </div>
             </div>
-          </div>
+          </div> */}
+          <Editactivity />
     </>
   )
 }
