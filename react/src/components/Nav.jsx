@@ -1,4 +1,4 @@
-import logo from '../../public/assets/img/b-logo.png';
+import logo from '../assets/img/b-logo.png';
 
 const Navbar = () => {
     return (
@@ -16,6 +16,9 @@ const Navbar = () => {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link text-warning" href="#">Feature</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link text-success" href={'/editactivity'}>Edit Activity</a>
                             </li>
                         </ul>
                         <ul className="d-flex">
