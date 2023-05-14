@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .loginpage {
@@ -15,8 +15,13 @@
     position: absolute;
 }
 
+.loginpage h1 {
+    font-size: 2em;
+    text-align: center;
+}
+
 .form {
-    margin: 160px 96px 96px 160px;
+    margin: 100px 96px 96px 160px;
     padding: 48px;
     border: 2px solid rgba(255, 255, 255, .5);
     background-color: transparent;
@@ -26,13 +31,45 @@
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
 }
 
-.username {
-    margin-top: 16px;
+.username,
+.password {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
 }
 
+/* .username h4,
+.password h4 {
+    position:absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
 
-.password {
+.username input:focus~.username h4,
+.username input:valid~.username {
+    top: -5px;
+} */
+
+.username input,
+.password input {
+    margin-top:8px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.btn {
     margin-top: 16px;
+    text-align: center;
 }
 
 .remember-me {
@@ -43,10 +80,6 @@
 .remember-me p {
     display: flex;
     margin-left: 8px;
-}
-
-.btn {
-    margin-top: 16px;
 }
 
 .register {
@@ -72,7 +105,7 @@
     margin-left: 8px;
     width: 130px;
     height: 40px;
-    background-color: orange;
+    background-image: linear-gradient(90deg, rgba(211,174,37,1) 0%, rgba(216,159,17,1) 41%, rgba(255,218,0,1) 100%);
     border: 2px solid white;
     border-radius: 6px;
     cursor: pointer;
@@ -88,7 +121,55 @@
 }
 
 hr {
-    width:50%;
+    width:70%;
     border: 1px solid black;
-    margin: 16px;
+    margin: 16px 3.5em;
+}
+
+.btn-login-google {
+    width: 100%;
+    
+}
+
+.google {
+    margin-left: 8px;
+    padding: 16px 16px;
+    width: 100%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: black;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.google:hover {
+    background: rgba(214, 205, 205, 0.765);
+    color: black;
+}
+
+.btn-login-facebook {
+    margin-top: 16px;
+    width: 100%;
+}
+
+.facebook {
+    margin-left: 8px;
+    padding: 16px 16px 16px 36px;
+    width: 100%;
+    background-color: #3b5998;
+    border: 2px solid white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.facebook:hover {
+    background: rgba(214, 205, 205, 0.765);
+    color: black;
 }

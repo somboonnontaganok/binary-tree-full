@@ -5,13 +5,13 @@ function LoginNew() {
   return (
     <div className="loginpage">
       <section className="form">
-        <h1 className="welcome">Welcome to NestFit</h1>
+        <h1 className="welcome">Welcome to <span style={{color: 'orange'}}>Nest</span>Fit</h1>
         <div className="username">
-          <h4>Username</h4>
+          <h4><span style={{color:'orange'}}>User</span>name</h4>
           <input className="input-username" type="text" />
         </div>
         <div className="password">
-          <h4>Password</h4>
+          <h4><span style={{color:'orange'}}>Pass</span>word</h4>
           <input className="input-password" type="password" />
         </div>
         <div className="remember-me">
