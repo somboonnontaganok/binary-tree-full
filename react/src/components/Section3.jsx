@@ -1,9 +1,9 @@
 import React from 'react';
-import hiit from '../../public/assets/img/HIIT-card.jpg';
-import wt from '../../public/assets/img/Weight training-card.jpg';
-import st from '../../public/assets/img/Strangth training-card.jpg';
-import pt from '../../public/assets/img/Pilates-card.jpg';
-import yt from '../../public/assets/img/Yoga-card.jpg';
+import hiit from '../assets/img/HIIT-card.jpg';
+import wt from '../assets/img/Weight training-card.jpg';
+import st from '../assets/img/Strangth training-card.jpg';
+import pt from '../assets/img/Pilates-card.jpg';
+import yt from '../assets/img/Yoga-card.jpg';
 
 const Section3 = () => {
   return (
@@ -11,7 +11,7 @@ const Section3 = () => {
         <div className="3-section my-5">
         <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
-              <div className="carousel-item active" data-bs-interval="3000">
+              <div className="carousel-item active" data-bs-interval="1000">
                 <img src={hiit} className="d-block w-50" alt="..."/>
                 <h5>Title</h5>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ullam, ducimus dolor fugit aliquam unde quasi molestiae vero placeat ut libero aut adipisci nihil velit maxime, tempore magni sed odit.</p>

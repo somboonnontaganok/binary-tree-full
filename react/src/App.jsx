@@ -2,6 +2,9 @@ import React from 'react'
 import Layout from '../src/components/Layout';
 import girl from './assets/img/girlAndCircle.png';
 import headPhone from './assets/img/headPhone.png';
+import Section2 from '../src/components/Section2';
+import Section3 from '../src/components/Section3';
+import Section4 from '../src/components/Section4';
 
 const App = () => {
 
@@ -23,6 +26,9 @@ const App = () => {
                 </div>
             </div>
           </div>
+          <Section2/>
+          <Section3/>
+          <Section4/>
     </>
   )
 }
