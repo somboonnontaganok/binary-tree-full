@@ -11,8 +11,20 @@ const ActivitySchema = new mongoose.Schema({
     required: true,
     ref: User,
   },
+  lastHour: { // not use now
+    type: Timestamp,
+    required: true,
+  },
   activityType: {
     type: String,
+    required: true,
+  },
+  heartRate: { // not use
+    type: Number,
+    required: true,
+  },
+  caloriesBurned: { // not use
+    type: Number,
     required: true,
   },
   duration: {
@@ -22,6 +34,11 @@ const ActivitySchema = new mongoose.Schema({
   date: {
     type: Date,
     default: Date.now,
+  },
+  
+  pace: { //calculate distance / minutes not use
+    type: Number,
+    require: true
   },
     distance: {
       type: Number,
