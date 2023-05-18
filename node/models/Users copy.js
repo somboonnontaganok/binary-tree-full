@@ -1,5 +1,5 @@
-// Model === class == Object Generated 
-// For user and profile
+// Model === class == Object Generated
+
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
@@ -16,11 +16,15 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  password: { 
+  password: { // jwt token
     type: String,
     required: true,
   },
-  birthDate: { 
+  confirmPassword: { // option
+    type: String,
+    required: true,
+  },
+  birthDate: { // calculate to age
     type: Date,
     default: Date.now,
   },
@@ -28,15 +32,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     enum: ["male", "female"],
   },
-  height: {
-    type: Number,
-    required: true,
-  },
-  weight: {
-    type: Number,
-    required: true,
-  },
-  bmi: { 
+  bmi: { // add height and weight
     type: Number,
     required: true,
   }
