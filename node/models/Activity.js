@@ -1,38 +1,20 @@
-// Model === class == Object Generated
+import mongoose from "mongoose";
 
-const mongoose = require("mongoose");
-
-const ACTIVITY_CONST = require("../models/activityType");
-const { Timestamp } = require("mongodb");
-
-const ActivitySchema = new mongoose.Schema({
-  userId: {
-    type: mongoose.Types.ObjectId,
-    required: true,
-    ref: User,
-  },
-  activityType: {
+const activitySchema = new mongoose.Schema({
+  activity_name: { type: String, required: true },
+  activity_date: { type: String, required: true },
+  description: { type: String },
+  activity_start_time: { type: String, required: true },
+  activity_finish_time: { type: String, required: true },
+  duration: { type: String },
+  activity_type: {
     type: String,
+    enum: ["Running", "Walking", "Bike cycling", "Swimming", "Badminton"],
     required: true,
   },
-  duration: {
-    type: Number,
-    required: true,
-  },
-  date: {
-    type: Date,
-    default: Date.now,
-  },
-    distance: {
-      type: Number,
-    require: true
-  },
-  description: {
-    type: String,
-    required: true,
-  },
+  distance: { type: Number },
 });
 
-const ActivityModel = new mongoose.model("Activity", ActivitySchema);
+const activityModel = mongoose.model("activity", activitySchema);
 
-module.exports = ActivityModel;
+export default activityModel;
