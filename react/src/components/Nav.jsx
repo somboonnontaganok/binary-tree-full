@@ -18,7 +18,7 @@ const Navbar = () => {
                                 <a className="nav-link text-warning" href="#">Feature</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-success" href={'/editactivity'}></a>
+                                <a className="nav-link text-success" href={'/editactivity'}>Edit Activity</a>
                             </li>
                         </ul>
                         <ul className="d-flex">

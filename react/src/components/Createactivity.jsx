@@ -9,6 +9,7 @@ function Createactivity() {
         watch
       } = useForm();
     
+    const onSubmit = data => console.log(data);
 
     // ถึงเวลาจริงสามารถเอาออกได้ เพราะไม่จำเป็นต้อง console ออกมา
       console.log(watch());

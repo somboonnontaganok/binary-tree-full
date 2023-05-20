@@ -5,8 +5,6 @@ const Editactivity = () => {
   return (
     <>
     <Layout/>
-   
-
     <div class="row g-5 mx-3">
       <div class="col-md-5 col-lg-4 order-md-last">
       <form class="needs-validation" novalidate="">
@@ -24,18 +22,12 @@ const Editactivity = () => {
               </div>
 
               <div class="col-12">
-                <label for="duration" class="form-label">Duration</label>
-                <input type="text" class="form-control" id="duration"  required=""/>
-            
-              </div>
-              <div class="col-12">
-                <label for="heartrate" class="form-label">Heart Rate</label>
+                <label for="heartrate" class="form-label">Distance</label>
                 <input type="text" class="form-control" id="heartrate" />
               </div>
 
-              <div class="col-md-5">
-                
-              <label for="remark" class="form-label">Remark</label>
+              <div class="col-md-5">  
+              <label for="date" class="form-label">Date</label>
               <input type="text" class="form-control" id="remark" />
                <p></p>
               </div>              
@@ -45,7 +37,7 @@ const Editactivity = () => {
       </div>
       <div class="col-md-7 col-lg-8">
       <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-primary text-warning">Edit Activity</span>
+          <span class="text-primary text-warning">Create Activity</span>
         </h4>
         <form>
           <div>

@@ -23,8 +23,8 @@ const ActivitySchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-    distance: {
-      type: Number,
+  distance: {
+    type: Number,
     require: true
   },
   description: {
