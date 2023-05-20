@@ -10,6 +10,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Editactivity from './components/Editactivity'
+import Createactivity from './components/Createactivity'
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: '/editactivity',
     element: <Editactivity />
+  },
+  {
+    path: '/createactivity',
+    element: <Createactivity />
   }
 ])
 
