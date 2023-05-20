@@ -1,79 +1,132 @@
-// import { useForm } from "react-hook-form";
-// import {useForm} from 'react-hook-form';
-import { useForm } from "react-hook-form";
-import '../components/Createactivity.css';
-import Layout from '../components/Layout';
+import { useState, useEffect } from "react";
+import Layout from "../components/Layout";
+import { getActivities, createActivities, deleteActivities } from "../api/activityApi";
 
-function Createactivity() {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    // const { register, handleSubmit } = useForm();
+function CreateActivity() {
+  const [activities, setActivities] = useState([]);
+  const [activity_name, setName] = useState();
+  const [activity_date, setDate] = useState();
+  const [description, setDescription] = useState();
+  const [activity_start_time, setStartTime] = useState();
+  const [activity_finish_time, setFinishTime] = useState();
+  const [activity_type, setType] = useState();
+  const [distance, setDistance] = useState();
+  const [load, toggleReload] = useState(false);
 
+  useEffect(() => {
+    const getActivitieses = async () => {
+      const activities = await getActivities();
+      setActivities(activities);
+    };
 
-    // ถึงเวลาจริงสามารถเอาออกได้ เพราะไม่จำเป็นต้อง console ออกมา
-      console.log(watch());
+    getActivitieses();
+  }, [load]);
+
+  const save = async () => {
+    const newActivity = {
+      activity_name,
+      activity_date,
+      description,
+      activity_start_time,
+      activity_finish_time,
+      activity_type,
+      distance,
+    };
+    await createActivities(newActivity);
+    toggleReload(!load);
+  };
+
+  const confirmDelete = async (id) => {
+    let text = "Press a button!\nEither OK or Cancel.";
+    if (confirm(text) == true) {
+        await deleteActivities(id);
+        toggleReload(!load);
+    } else {
+        alert("You canceled!");
+    } 
+}
 
   return (
     <>
     <Layout/>
-            {/* for onSubmit  */}
-            <form className="create-activty" onSubmit={handleSubmit((data) => {
-                console.log(data);
-            })}>          
-                <section className="create-activity-left-page">
-                    <div className="activity-topic">
-                        <h1 className="topic">Create Activity</h1>
-                    </div>
-                    <div>
-                        <h3>Input your Image</h3>
-                        <input className="input-img" type="file" id="input-img" {...register("title",{required: 'This is required to push Name.'})}/>
-                    </div>
-                    <div className="activity-title">
-                        <h3 className="title">Title</h3>
-                        {/* ...register = useState   */}
-                        <input className="input-title" {...register("title",{required: 'This is required to push Name.'})} 
-                        placeholder="Title" />
-                    </div>
-                    <div className="activity-workout-types">
-                        <h3 className="workout-types">Workout Types</h3>
-                        <select className="input-workout-types" {...register("Workout Types")}>
-                            <option value="hiit">HIIT</option>
-                            <option value="strength">Strength</option>
-                            <option value="yoga">Yoga</option>
-                            <option value="pilates">Pilates</option>
-                            <option value="weight">Weight</option>
-                        </select>
-                    </div>
-                </section>
-
-                <section className="create-activity-right-side">
-                    <div className="activity-description">
-                        <h3 className="description">Description</h3>
-                        <input className="input-description"{...register("Description",{required: false})} 
-                        placeholder="Description" />
-                    </div>
-                    <div className="activity-duration">
-                        <h3 className="duration">Duration</h3>
-                        <input className="input-duration" {...register("Duration",{required: 'This is required to push Name.'})} 
-                        placeholder="xx:xx" />
-                    </div>
-                    <div className="activity-distance">
-                        <h3 className="distance">Distance</h3>
-                        <input className="input-distance" {...register("Distance",{required: 'This is required to push Name.'})} 
-                        placeholder="xxx" />
-                    </div>
-                    <div className="activity-date">
-                        <h3 className="date">Date</h3>
-                        <input className="input-date" {...register("Date",{required: 'This is required to push Name.'})} 
-                        placeholder="xx:xx" />
-                    </div>
-                </section>
-                    <div className="activity-button">
-                        <input className="input-button" type="submit" />
-                    </div>
-            
-            </form>
+      <div>
+      <h3>Create</h3>
+        <input
+          type="text"
+          placeholder="Name"
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Date"
+          onChange={(e) => setDate(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Description"
+          onChange={(e) => setDescription(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Duration"
+          onChange={(e) => setDuration(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Start Time"
+          onChange={(e) => setStartTime(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Finish Time"
+          onChange={(e) => setFinishTime(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Type"
+          onChange={(e) => setType(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Distance"
+          onChange={(e) => setDistance(e.target.value)}
+        />
+        <button onClick={save}>Save</button>
+        
+      </div>
+      
+      <h3>Render</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Start_Time</th>
+            <th>Finish_Time</th>
+            <th>Type</th>
+            <th>Distance</th>
+          </tr>
+        </thead>
+        <tbody>
+          {activities.map((activity) => {
+            return (
+              <tr key={activity._id}>
+                <td>{activity.activity_name}</td>
+                <td>{activity.activity_date}</td>
+                <td>{activity.description}</td>
+                <td>{activity.activity_start_time}</td>
+                <td>{activity.activity_finish_time}</td>
+                <td>{activity.type}</td>
+                <td>{activity.distance}</td>
+                <td><button onClick={() => {confirmDelete(activity._id)}}>Delete</button></td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </>
-  )
+  );
 }
 
-export default Createactivity
+export default CreateActivity;

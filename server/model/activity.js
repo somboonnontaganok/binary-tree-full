@@ -6,10 +6,9 @@ const activitySchema = new mongoose.Schema({
   description: { type: String },
   activity_start_time: { type: String, required: true },
   activity_finish_time: { type: String, required: true },
-  duration: { type: String },
   activity_type: {
     type: String,
-    enum: ["Running", "Walking", "Bike cycling", "Swimming", "Badminton"],
+    enum: ["hiit", "strength", "yoga", "pilates", "weight"],
     required: true,
   },
   distance: { type: Number },
