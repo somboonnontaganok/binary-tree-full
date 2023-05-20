@@ -24,12 +24,7 @@ const Editactivity = () => {
               </div>
 
               <div class="col-12">
-                <label for="duration" class="form-label">Duration</label>
-                <input type="text" class="form-control" id="duration"  required=""/>
-            
-              </div>
-              <div class="col-12">
-                <label for="heartrate" class="form-label">Heart Rate</label>
+                <label for="heartrate" class="form-label">Distance</label>
                 <input type="text" class="form-control" id="heartrate" />
               </div>
 
