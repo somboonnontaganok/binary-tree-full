@@ -120,7 +120,7 @@ function CreateActivity() {
                 <td><input value={activity.description} disabled={!inputActive} className={`${inputActive ? 'inputTrue' : 'inputFalse'}`}/></td>
                 <td><input value={activity.activity_start_time} disabled={!inputActive} className={`${inputActive ? 'inputTrue' : 'inputFalse'}`}/></td>
                 <td><input value={activity.activity_finish_time} disabled={!inputActive} className={`${inputActive ? 'inputTrue' : 'inputFalse'}`}/></td>
-                <td><input value={activity.type} disabled={!inputActive} className={`${inputActive ? 'inputTrue' : 'inputFalse'}`}/></td>
+                <td><input value={activity.activity_type} disabled={!inputActive} className={`${inputActive ? 'inputTrue' : 'inputFalse'}`}/></td>
                 <td><input value={activity.distance} disabled={!inputActive} className={`${inputActive ? 'inputTrue' : 'inputFalse'}`}/></td>
                 <td><button onClick={ () => setInputActive(true)}>Edit</button></td>
                 <td><button onClick={() => {confirmDelete(activity._id)}}>Delete</button></td>
