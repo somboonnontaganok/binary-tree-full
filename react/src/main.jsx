@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     element: <Signup />
   },
   {
-    path: '/editactivity',
+    path: '/editactivity/:activityId',
     element: <Editactivity />
   },
   {
