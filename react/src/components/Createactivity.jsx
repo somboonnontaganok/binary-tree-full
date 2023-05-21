@@ -126,6 +126,7 @@ function CreateActivity() {
                 <td><button onClick={() => {confirmDelete(activity._id)}}>Delete</button></td>
                 {inputActive ? <td><button onClick={() => {confirmDelete(activity._id)}}>Delete</button></td> : null}
                 {/* <td><a href={`/editactivity/${activity._id}`}>Edit2</a></td> */}
+
               </tr>
             );
           })}
