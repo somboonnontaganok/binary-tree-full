@@ -20,6 +20,9 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <a className="nav-link text-success" href={'/editactivity'}>Edit Activity</a>
                             </li>
+                            <li className="nav-item">
+                                <a className="nav-link text-success" href={'/createactivity'}>Create Activity</a>
+                            </li>
                         </ul>
                         <ul className="d-flex">
                             <li className="nav-item">

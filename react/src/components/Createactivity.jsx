@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
-import { getActivities, createActivities, deleteActivities } from "../api/activityApi";
+import { getActivities, createActivities, deleteActivities, editActivities } from "../api/activityApi";
 
 function CreateActivity() {
   const [activities, setActivities] = useState([]);
   const [activity_name, setName] = useState();
   const [activity_date, setDate] = useState();
   const [description, setDescription] = useState();
+  const [duration, setDuration] = useState();
   const [activity_start_time, setStartTime] = useState();
   const [activity_finish_time, setFinishTime] = useState();
   const [activity_type, setType] = useState();
   const [distance, setDistance] = useState();
   const [load, toggleReload] = useState(false);
+  const [inputActive, setInputActive] = useState(false);
 
   useEffect(() => {
     const getActivitieses = async () => {
@@ -27,6 +29,7 @@ function CreateActivity() {
       activity_name,
       activity_date,
       description,
+      duration,
       activity_start_time,
       activity_finish_time,
       activity_type,
@@ -112,14 +115,17 @@ function CreateActivity() {
           {activities.map((activity) => {
             return (
               <tr key={activity._id}>
-                <td>{activity.activity_name}</td>
-                <td>{activity.activity_date}</td>
-                <td>{activity.description}</td>
-                <td>{activity.activity_start_time}</td>
-                <td>{activity.activity_finish_time}</td>
-                <td>{activity.type}</td>
-                <td>{activity.distance}</td>
+                <td><input value={activity.activity_name} disabled={!inputActive} className={`${inputActive ? 'inputTrue' : 'inputFalse'}`}/></td>
+                <td><input value={activity.activity_date} disabled={!inputActive} className={`${inputActive ? 'inputTrue' : 'inputFalse'}`}/></td>
+                <td><input value={activity.description} disabled={!inputActive} className={`${inputActive ? 'inputTrue' : 'inputFalse'}`}/></td>
+                <td><input value={activity.activity_start_time} disabled={!inputActive} className={`${inputActive ? 'inputTrue' : 'inputFalse'}`}/></td>
+                <td><input value={activity.activity_finish_time} disabled={!inputActive} className={`${inputActive ? 'inputTrue' : 'inputFalse'}`}/></td>
+                <td><input value={activity.type} disabled={!inputActive} className={`${inputActive ? 'inputTrue' : 'inputFalse'}`}/></td>
+                <td><input value={activity.distance} disabled={!inputActive} className={`${inputActive ? 'inputTrue' : 'inputFalse'}`}/></td>
+                <td><button onClick={ () => setInputActive(true)}>Edit</button></td>
                 <td><button onClick={() => {confirmDelete(activity._id)}}>Delete</button></td>
+                {inputActive ? <td><button onClick={() => {confirmDelete(activity._id)}}>Delete</button></td> : null}
+                {/* <td><a href={`/editactivity/${activity._id}`}>Edit2</a></td> */}
               </tr>
             );
           })}
