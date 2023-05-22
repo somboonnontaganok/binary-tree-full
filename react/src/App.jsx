@@ -5,6 +5,7 @@ import headPhone from './assets/img/headPhone.png';
 import Section2 from '../src/components/Section2';
 import Section3 from '../src/components/Section3';
 import Section4 from '../src/components/Section4';
+import './App.css'
 
 const App = () => {
 

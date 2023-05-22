@@ -1,11 +1,12 @@
-import logo from '../assets/img/b-logo.png';
+// import logo from '../assets/img/b-logo.png';
+import logo from '../assets/img/Nest-fit.png'
 
 const Navbar = () => {
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light ">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href={'/'}><img src={logo}/></a>
+                    <a className="navbar-brand" href={'/'}><img style={{width: 80}} src={logo}/></a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -24,7 +25,7 @@ const Navbar = () => {
                                 <a className="nav-link text-success" href={'/createactivity'}>Create Activity</a>
                             </li>
                         </ul>
-                        <ul className="d-flex">
+                        <ul className="d-flex" style={{listStyleType:"none"}}>
                             <li className="nav-item">
                                 <button className="btn btn-light" type="submit"><a href={'/login'}>Log In</a></button>
                             </li>

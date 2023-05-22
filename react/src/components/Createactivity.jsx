@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import { getActivities, createActivities, deleteActivities, editActivities } from "../api/activityApi";
+import './Createactivity.css';
 
 function CreateActivity() {
   const [activities, setActivities] = useState([]);
@@ -52,49 +53,62 @@ function CreateActivity() {
   return (
     <>
     <Layout/>
-      <div>
-      <h3>Create</h3>
+    <div className="create-activity">
+    <h3 style={{color:"#fac031"}}>Create <span style={{color:"white", backgroundColor:"#fac031"}}>Activity</span></h3>
+    <div className="create-form">
+        <label>Name</label>
         <input
           type="text"
           placeholder="Name"
           onChange={(e) => setName(e.target.value)}
         />
+        <label>Date</label>
         <input
           type="text"
           placeholder="Date"
           onChange={(e) => setDate(e.target.value)}
         />
+        <label>Description</label>
         <input
           type="text"
           placeholder="Description"
           onChange={(e) => setDescription(e.target.value)}
         />
+        <label>Duration</label>
         <input
           type="text"
           placeholder="Duration"
           onChange={(e) => setDuration(e.target.value)}
         />
+        <label>Start Time</label>
         <input
           type="text"
           placeholder="Start Time"
           onChange={(e) => setStartTime(e.target.value)}
         />
+        <label>Finish Time</label>
         <input
           type="text"
           placeholder="Finish Time"
           onChange={(e) => setFinishTime(e.target.value)}
         />
+        <label>Activity Type</label>
         <input
           type="text"
           placeholder="Type"
           onChange={(e) => setType(e.target.value)}
         />
+        <label>Distance</label>
         <input
           type="text"
           placeholder="Distance"
           onChange={(e) => setDistance(e.target.value)}
         />
-        <button onClick={save}>Save</button>
+      </div>
+      <div className="create-btn">
+          <button className="create-save-btn" onClick={save}>Save</button>
+          <button>Cancel</button>
+      </div>
         
       </div>
       
