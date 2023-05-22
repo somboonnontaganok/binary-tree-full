@@ -1,25 +1,49 @@
 * {
     margin: 0;
-    margin-bottom: 16px;
     padding: 0;
     box-sizing: border-box;
-    text-align: start;
 }
 
-.create-activty {
+.create-activity {
+    width: 80%;
+    margin: 30px;
+    padding: 30px;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.create-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 15px;
+}
+
+
+.create-form label {
+    font-weight: 500;
+}
+
+.create-form input {
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #fac031;
+    padding-left: 8px;
+}
+
+.create-btn {
     display: flex;
-    width: 100%;
+    flex-direction: row-reverse;
 }
 
-.create-activity-left-page {
-    margin-right: 100px;
+.create-btn button{
+    margin-left: 16px;
 }
 
-.input-button {
-    text-align: center;
-}
-
-.input-button {
+.create-save-btn {
     margin-left: 8px;
     padding: 0;
     width: 130px;
@@ -37,7 +61,7 @@
     font-weight: 500;
 }
 
-.input-button::before {
+.create-save-btn::before {
     content: '';
     width: 0;
     height: 3em;
@@ -45,14 +69,14 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-image: linear-gradient(90deg, rgba(211,174,37,1) 0%, rgba(216,159,17,1) 41%, rgba(255,218,0,1) 100%);;
+    background-image: linear-gradient(90deg, rgb(230, 202, 99) 0%, rgb(239, 202, 107) 41%, rgba(255,218,0,1) 100%);;
     transition: .5s ease;
     display: block;
     z-index: -1;
     color: white;
 }
 
-.input-button:hover::before {
+.create-save-btn:hover::before {
     width: 9em;
     color: white;
 }
